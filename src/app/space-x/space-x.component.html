@@ -1,0 +1,17 @@
+
+<div *ngIf="spaceXInfos">
+   Name: {{spaceXInfos.name}} <br>
+   Founder: {{spaceXInfos.founder}} <br>
+   Employees: {{spaceXInfos.employees}} <br>
+   Vehicles: {{spaceXInfos.vehicles}}
+</div>
+
+<!-- #3 Az adatok szimpla megjelenítése HTML oldalon. A visszakapott object egy részét jelenítjük itt meg.
++1 A böngésző network fülén láthatjuk a meghívott végpontokat és az adatkommunikációt
++2 Mivel a metódusunk async, szükség lehet az *ngIf-es vizsgálatra, mivel a HTML oldalunk hamarabb betölt,
+mint ahogy az adatok visszaérkeznek a végpontról -->
+
+<!-- +3 A HTML oldalon is megjeleníthető a beérkezett adat, főleg debuggolás miatt hasznos. Pl.:-->
+<pre *ngIf="spaceXInfos">
+    {{spaceXInfos | json}}
+</pre>
