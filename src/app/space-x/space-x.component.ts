@@ -14,15 +14,12 @@ export class SpaceXComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this._getSpaceXInfos();
-  }
-
-  private async _getSpaceXInfos() {
     this._spaceXService.getSpaceXInfos().subscribe(res => {
       this.spaceXInfos = res;
       console.log('res', res);
     });
   }
+
 }
 
 // #2 Adott komponens legenerálása. A service behúzása konstrukorba. Végpont kezelése egy metódusban.
